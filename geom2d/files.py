@@ -3,8 +3,10 @@ import json
 f = open("c:/temp/py/config.json")
 try:
     res = json.load(f)
-except ValueError:
+except ValueError as ex:
+    print(ex)
+    res = {}
+finally:
+    f.close()
 
-f.close()
-
-print(res)s
+print(res)
